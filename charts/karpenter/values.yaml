@@ -15,6 +15,9 @@ imagePullSecrets: []
 service:
   # -- Additional annotations for the Service.
   annotations: {}
+rbac:
+  # -- Aggregate ClusterRoles to Kubernetes default user-facing roles. For more information, see [User-facing roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles)
+    aggregateClusterRoles: true
 serviceAccount:
   # -- Specifies if a ServiceAccount should be created.
   create: true
