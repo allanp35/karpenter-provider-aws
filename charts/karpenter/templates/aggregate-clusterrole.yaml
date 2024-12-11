@@ -3,7 +3,9 @@ kind: ClusterRole
 metadata:
   name: {{ include "karpenter.fullname" . }}-admin
   labels:
+    {{- if .Values.rbac.aggregateClusterRoles }}
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
+    {{- end }}
     {{- include "karpenter.labels" . | nindent 4 }}
   {{- with .Values.additionalAnnotations }}
   annotations:
